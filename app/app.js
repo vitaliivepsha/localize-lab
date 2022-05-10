@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('./assets/templates/layouts/profile-settings.html');
   require('./assets/templates/layouts/admin-step2__logged-in.html');
   require('./assets/templates/layouts/admin-step3.html');
+  require('./assets/templates/layouts/admin-step5.html');
 }
 
 // Depends

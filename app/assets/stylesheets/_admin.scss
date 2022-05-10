@@ -40,10 +40,16 @@
   }
   &.admin-upload {
     @include bp(xs) {
+      padding: 20px 40px 60px;
+    }
+    @include bp(xxs) {
       padding: 20px 20px 60px;
     }
     &.has-menu{
       @include bp(xs) {
+        padding: 20px 40px 120px;
+      }
+      @include bp(xxs) {
         padding: 20px 20px 120px;
       }
     }
@@ -318,16 +324,15 @@
   }
 }
 
-/*  step 2  */
+/*  step 2-3  */
 
 .admin-upload {
   & .admin-step__buttons {
-
-  @media (max-width: 991px) {
-    display: flex;
-    justify-content: center;
+    @media (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+    }
   }
-}
 }
 
 .admin-upload__wrapper {
