@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/admin-step1.html');
     require('./assets/templates/layouts/admin-step1__logged-in.html');
     require('./assets/templates/layouts/admin-step2__logged-in.html');
+    require('./assets/templates/layouts/admin-step4.html');
 }
 
 // Depends
