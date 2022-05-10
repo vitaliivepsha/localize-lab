@@ -229,8 +229,17 @@
         }
       }
       &.checked{
-        border: 1px solid $green;
+        i {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+           border: 1px solid $green;
         box-shadow: none;
+        }
+       & span {
+        margin-left: 0;
+          margin-top: 0;
+       }
       }
     }
   }
