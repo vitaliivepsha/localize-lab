@@ -1,0 +1,264 @@
+@import "variables";
+@import "vendor";
+@import "fonts";
+@import "mixin";
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  max-width: 100vw;
+  overflow: hidden;
+  color: $text;
+  background: #fff;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: $default, -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  @include bp(md) {
+    max-height: unset;
+    overflow: auto;
+  }
+  &.admin{
+    max-height: unset;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      overflow-y: scroll;
+      background: transparent;
+      width: 6px;
+      transition: linear .2s;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $text;
+      border-radius: 3px;
+      width: 6px;
+      cursor: grab;
+    }
+  }
+  &.menu-opened {
+    overflow: hidden;
+    height: 100vh;
+    .mobile-menu__wrapper{
+      left: 0;
+    }
+  }
+}
+
+ol,
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+a,
+.slick-slide {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  transition: 0.2s linear;
+}
+
+svg {
+  * {
+    transition: linear 0.2s;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.section {
+  clear: both;
+  position: relative;
+}
+
+.container,
+.row {
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0;
+  height: 59px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff;
+  cursor: pointer;
+  transition: linear 0.2s;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  box-shadow: 0 20px 60px rgba(98, 60, 231, 0.3);
+  border-radius: 10px;
+  outline: none !important;
+  position: relative;
+  @include bp(xs) {
+    height: 51px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    box-shadow: 0 20px 40px rgba(98, 60, 231, 0.15);
+    background-color: $green;
+    border-color: $green;
+  }
+  &.btn-g{
+    background-color: $green;
+    border-color: $green;
+    box-shadow: 0 20px 60px rgba(38, 214, 141, 0.3);
+    &:hover {
+      background-color: $accent;
+      border-color: $accent;
+      box-shadow: 0 20px 40px rgba(38, 214, 141, 0.15);
+    }
+  }
+  &.btn-tr{
+    background-color: transparent;
+    border-color: $text;
+    color: $text;
+    filter: drop-shadow(0px 20px 60px rgba(98, 60, 231, 0.3));
+    box-shadow: none;
+    &:hover {
+      background-color: transparent;
+      border-color: $accent;
+      color: $accent;
+      filter: drop-shadow(0px 20px 40px rgba(98, 60, 231, 0.15));
+      box-shadow: none;
+      svg{
+        path{
+          stroke: $accent;
+        }
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 30px;
+  padding: 0 25px;
+  border: none;
+  color: $text;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  background-color: #fff;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: none;
+  @include bp(xs) {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  &::placeholder {
+    color: $text;
+  }
+  &:focus {
+    font-size: 16px;
+    border-color: $green;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+select:-webkit-autofill,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  -webkit-text-fill-color: $text;
+  -webkit-box-shadow: inset 0 0 0 1000px transparent;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: $text;
+}
+
+.validate-error {
+  font-family: $default, -apple-system, BlinkMacSystemFont, sans-serif;
+  transform: none;
+  width: max-content;
+  left: 0;
+  bottom: -26px;
+  font-size: 14px;
+  color: #981212;
+  z-index: 2;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: linear 0.2s;
+}
+
+::selection {
+  background: rgba($accent, 0.35);
+  color: #fff;
+  text-shadow: none;
+}
+
+// Header
+@import "header";
+
+// Popup
+@import "popup";
+
+// Sidebar
+@import "sidebar";
+
+// Pages
+@import "main";
+@import "admin";
