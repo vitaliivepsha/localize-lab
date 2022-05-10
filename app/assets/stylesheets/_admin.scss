@@ -198,13 +198,13 @@
     border: 1px solid #F3F2F2;
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.03), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
     border-radius: 10px;
-    height: 58px;
+    height: 56px;
     display: flex;
     align-items: center;
     padding: 0 25px 0 16px;
     cursor: pointer;
     @include bp(xs) {
-      height: 48px;
+      height: 46px;
       padding: 0 13px 0 14px;
     }
     >span{

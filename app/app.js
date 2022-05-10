@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
   require('./assets/templates/layouts/index.html');
   require('./assets/templates/layouts/admin-step1.html');
   require('./assets/templates/layouts/admin-step1__logged-in.html');
+  require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
+  require('./assets/templates/layouts/profile-settings.html');
 }
 
 // Depends
@@ -59,7 +61,7 @@ $(function() {
     scrollPrev = scrolled;
   });
 
-// mobile menu
+  // mobile menu
 
   var touch = $('.mobile-menu__btn');
   var toggles = document.querySelectorAll('.mobile-menu__btn');

@@ -133,6 +133,9 @@
         color: $black;
         background: #F7F8FC;
       }
+      &.current{
+        color: $accent;
+      }
     }
   }
 }
