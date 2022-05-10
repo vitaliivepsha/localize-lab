@@ -1,3 +1,5 @@
+/*  profile  */
+
 .admin-profile__wrapper{
   display: flex;
   flex-wrap: wrap;
@@ -116,6 +118,79 @@
     }
     .input{
       width: calc(100% - 34px);
+    }
+  }
+}
+
+/*  my files  */
+
+.admin-files__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 17px;
+  max-width: 750px;
+  @include bp(xs) {
+    width: 308px;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 15px 10px;
+  }
+}
+
+.admin-file{
+  width: 237px;
+  height: 79px;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  text-decoration: none;
+  color: $black;
+  @include bp(xs) {
+    width: 148px;
+    max-width: calc(50% - 5px);
+    height: 49px;
+  }
+  &:hover{
+    text-decoration: none;
+    color: $accent;
+  }
+}
+
+.admin-file__inner{
+  margin: 15px 25px;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  width: calc(100% - 50px);
+  @include bp(xs) {
+    margin: 9px 15px;
+    width: calc(100% - 30px);
+  }
+  div{
+    width: 54px;
+    min-width: 54px;
+    height: 44px;
+    @include bp(xs) {
+      height: 27px;
+      width: 34px;
+      min-width: 34px;
+    }
+    img{
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    @include bp(xs) {
+      font-size: 11px;
+      line-height: 13px;
     }
   }
 }
@@ -823,3 +898,4 @@
     }
   }
 }
+
