@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Localize LAB</title>
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon.png" type="image/png">
+    <meta name="theme-color" content="#8624E1">
+    <meta name="msapplication-navbutton-color" content="#8624E1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#8624E1">
+</head>
+<body class="admin">
+
+<main class="main-admin">
+    ${require('../parts/header.html')}
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar__steps">
+                <ul>
+                    <li class="checked">
+                        <i>
+                            <span>
+                                <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.49671 7.07273C5.67196 5.84616 6.765 4.70205 7.86053 3.56116C8.88382 2.49565 9.90772 1.43013 10.9379 0.371704C11.4212 -0.124978 12.1766 -0.121113 12.6456 0.362685C13.1071 0.838753 13.1252 1.60342 12.6518 2.10397C11.7089 3.1012 10.7491 4.08104 9.79561 5.06796C8.43913 6.47168 7.08139 7.87541 5.7249 9.27913C5.70996 9.29459 5.69625 9.31005 5.68255 9.32616C4.84424 10.3247 4.06261 10.1114 3.36631 9.34162C2.42399 8.2993 1.42001 7.31688 0.447176 6.30355C-0.00872345 5.82877 -0.110242 5.34626 0.114594 4.8135C0.444062 4.03208 1.45614 3.83302 2.04033 4.436C2.76716 5.18521 3.49461 5.93442 4.21769 6.68814C4.31174 6.78606 4.38025 6.91039 4.49671 7.07273Z" fill="#26D68D"></path>
+                                </svg>
+                            </span>
+                        </i>
+                        <div><span>Select Languages</span></div>
+                    </li>
+                    <li class="checked">
+                        <i>
+                            <span>
+                                <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.49671 7.07273C5.67196 5.84616 6.765 4.70205 7.86053 3.56116C8.88382 2.49565 9.90772 1.43013 10.9379 0.371704C11.4212 -0.124978 12.1766 -0.121113 12.6456 0.362685C13.1071 0.838753 13.1252 1.60342 12.6518 2.10397C11.7089 3.1012 10.7491 4.08104 9.79561 5.06796C8.43913 6.47168 7.08139 7.87541 5.7249 9.27913C5.70996 9.29459 5.69625 9.31005 5.68255 9.32616C4.84424 10.3247 4.06261 10.1114 3.36631 9.34162C2.42399 8.2993 1.42001 7.31688 0.447176 6.30355C-0.00872345 5.82877 -0.110242 5.34626 0.114594 4.8135C0.444062 4.03208 1.45614 3.83302 2.04033 4.436C2.76716 5.18521 3.49461 5.93442 4.21769 6.68814C4.31174 6.78606 4.38025 6.91039 4.49671 7.07273Z" fill="#26D68D"></path>
+                                </svg>
+                            </span>
+                        </i>
+                        <div><span>Upload Content</span></div>
+                    </li>
+                    <li class="current">
+                        <i><span>3</span></i>
+                        <div><span>Project brief</span></div>
+                    </li>
+                    <li>
+                        <i><span>4</span></i>
+                        <div><span>Confirm Word Count</span></div>
+                    </li>
+                    <li>
+                        <i><span>5</span></i>
+                        <div><span>Translation project quote</span></div>
+                    </li>
+                    <li>
+                        <i><span>6</span></i>
+                        <div><span>Payment</span></div>
+                    </li>
+                </ul>
+                <div class="admin-sidebar__step-name">Project brief</div>
+            </div>
+        </aside>
+        <div class="admin-content">
+            <img src="../../images/admin-bg.png" alt="" class="admin-bg">
+            <div class="admin-content__main admin-upload">
+                <span class="admin-title">Project Brief</span>
+                <div class="admin-lang__wrapper">
+                    <div class="admin-lang">
+                        <label>What’s your project about?</label>
+                        <select class="select">
+                            <option selected disabled>Choose from list</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-upload__wrapper">
+                    <p>
+                        <span>Type your instructions (Style, tone, special requirements, etc.)</span>
+                        <span class="new-line">Max length 100000 characters.</span>
+                    </p>
+                    <textarea class="textarea admin-upload__text"></textarea>
+                    <p><span>Upload a glossary/terminology file. </span><span>File formats: docx., txt., rtf., xlsx., csv.</span></p>
+                    <div class="admin-upload__files">
+                        <div class="admin-upload__files-inner">
+                            <div class="input-file">
+                                <input name="upload" type="file" accept=".docx, .txt, .rtf, .xlsx, .csv" id="upload-file">
+                                <label for="upload-file">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.90321 15.993C6.5655 15.993 5.22778 16.0112 3.89006 15.9889C1.46777 15.9443 0.0250912 14.4816 0.00451092 12.0776C-0.00166316 11.4345 0.00862697 10.7914 0.000394866 10.1503C-0.00783724 9.55587 0.107412 9.00203 0.842127 9.01623C1.51099 9.0284 1.62212 9.54572 1.60977 10.1077C1.59536 10.8522 1.58302 11.5967 1.61389 12.3393C1.66328 13.5687 2.44327 14.3862 3.69455 14.4025C6.5408 14.439 9.38705 14.4369 12.2333 14.4045C13.534 14.3903 14.316 13.5646 14.3551 12.2764C14.3798 11.4994 14.279 10.7082 14.4004 9.94944C14.456 9.6005 14.9149 9.31445 15.1907 9C15.4479 9.30228 15.8966 9.5863 15.9295 9.91292C16.0242 10.8502 16.0221 11.8098 15.9316 12.7491C15.7463 14.65 14.2605 15.9118 12.223 15.995C12.1551 15.997 12.0851 15.997 12.0172 15.997C10.6466 15.993 9.27592 15.993 7.90321 15.993Z"
+                                            fill="black" />
+                                        <path
+                                            d="M8.68684 2.62654C8.68684 5.38643 8.68684 7.87844 8.68684 10.3704C8.68684 10.6748 8.77697 11.0279 8.6548 11.2694C8.49857 11.5779 8.1701 11.998 7.91372 12C7.65335 12.002 7.23074 11.5901 7.16264 11.2918C7.03846 10.7459 7.11857 10.1513 7.11857 9.57698C7.11657 7.35081 7.11857 5.12667 7.11857 2.63669C6.44159 3.2739 5.91683 3.75688 5.4061 4.25203C4.98749 4.6579 4.47274 5.02318 4.07216 4.42047C3.89791 4.15868 4.06215 3.43625 4.32052 3.15214C5.19779 2.18415 6.19524 1.32778 7.12458 0.406465C7.65735 -0.123189 8.13204 -0.143482 8.67282 0.394289C9.6262 1.33995 10.6056 2.25721 11.573 3.18867C11.9856 3.58439 12.224 4.10186 11.6972 4.46511C11.4448 4.63963 10.8199 4.51585 10.5135 4.3048C9.91662 3.89284 9.42591 3.3226 8.68684 2.62654Z"
+                                            fill="black" />
+                                    </svg>
+                                    <span>Upload</span>
+                                </label>
+                            </div>
+                            <div class="uploaded-files" id="upload-preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-step__buttons">
+            <span class="btn btn-tr btn-back">
+              <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 11.5L2 6.5L8 1" stroke="#666666" stroke-width="2"></path>
+              </svg>
+              <span>Back</span>
+            </span>
+                    <span class="btn btn-next">
+              <span>Next</span>
+              <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 6L1 11.5" stroke="white" stroke-width="2" />
+              </svg>
+            </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</main>
+
+</body>
+</html>

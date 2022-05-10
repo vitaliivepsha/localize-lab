@@ -39,11 +39,16 @@
     }
   }
   &.admin-upload {
-     @include bp(xs) {
-              padding: 0 20px;
-            }
-    & .admin-title {
-        @include bp(md) {
+    @include bp(xs) {
+      padding: 20px 20px 60px;
+    }
+    &.has-menu{
+      @include bp(xs) {
+        padding: 20px 20px 120px;
+      }
+    }
+    .admin-title {
+      @include bp(md) {
         display: none;
       }  
     }
@@ -150,6 +155,12 @@
   @include bp(xs) {
     gap: 22px;
   }
+  +.admin-upload__wrapper{
+    margin-top: 45px;
+    @include bp(xs) {
+      margin-top: 30px;
+    }
+  }
 }
 
 .admin-lang{
@@ -208,13 +219,13 @@
     border: 1px solid #F3F2F2;
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.03), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
     border-radius: 10px;
-    height: 58px;
+    height: 56px;
     display: flex;
     align-items: center;
     padding: 0 25px 0 16px;
     cursor: pointer;
     @include bp(xs) {
-      height: 48px;
+      height: 46px;
       padding: 0 13px 0 14px;
     }
     >span{
@@ -321,14 +332,18 @@
 
 .admin-upload__wrapper {
   &>p {
-    margin: 0;
     margin-left: 16px;
     margin-bottom: 13px;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.2em;
     color: rgba($text, 0.64);
-
+    @include bp(xs) {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      line-height: 13px;
+    }
     & span {
       @media (max-width: 991px) {
         display: block;
@@ -336,48 +351,74 @@
     }
     & span+span {
       color: $grey;
+      @include bp(xs) {
+        font-size: 10px;
+        line-height: 12px;
+      }
+      &.new-line{
+        display: block;
+      }
     }
   }
 }
 
 .admin-upload__text {
-  max-width: 707px;
+  width: 707px;
+  max-width: 100%;
+  resize: none;
   min-height: 149px;
   margin-bottom: 40px;
   padding: 30px 33px 27px 23px;
-  background: #FFFFFF;
-    border: 1px solid #F3F2F2;
-    box-shadow: 0px 20px 13px rgba(0, 0, 0, 0.015), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
-    border-radius: 10px;
-    box-sizing: border-box;
-  & p {
-    margin: 0;
-      font-size: 16px;
-      line-height: 26px;
-      color: $black;
+  background: #fff;
+  border: 1px solid #F3F2F2;
+  box-shadow: 0 20px 13px rgba(0, 0, 0, 0.015), 0 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 26px;
+  color: $black;
+  font-family: $default;
+  @include bp(xs) {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 16px;
+    margin-bottom: 30px;
+  }
+  &::placeholder {
+    color: $text;
+  }
+  &:focus {
+    border-color: #d0d0d0;
+    box-shadow: 0 100px 40px rgba(0, 0, 0, 0.015), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
+    &::placeholder {
+      color: transparent;
+    }
   }
 }
 
 .admin-upload__files-inner {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   .input-file {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 139px;
-    height: 50px;
+    width: 137px;
+    height: 48px;
     margin-right: 34px;
     background: #F7F8FC;
     border: 1px solid #F3F2F2;
-    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.03), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
     border-radius: 10px;
     cursor: pointer;
     transition: linear 0.2s;
+    @include bp(xs) {
+      width: 103px;
+      height: 41px;
+    }
     &:hover {
-          border-color: rgba(#8624E1, 0.2);
-      }
+      border-color: rgba(#8624E1, 0.2);
+    }
     >label {
       font-weight: 400;
       margin-bottom: 0;
@@ -386,35 +427,74 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-
+      svg{
+        @include bp(xs) {
+          width: 15px;
+          height: 15px;
+        }
+      }
       span {
         padding-left: 12px;
-      font-size: 16px;
+        font-size: 16px;
         line-height: 19px;
         text-align: center;
         color: $black;
+        @include bp(xs) {
+          font-size: 14px;
+          line-height: 16px;
+          padding-left: 9px;
+        }
       }
     }
-
     input {
       display: none;
     }
   }
-  & .file {
-    & + .file {
-      margin-left: 27px;
+  .uploaded-files{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+    width: calc(100% - 180px);
+    @include bp(xs) {
+      gap: 12px;
     }
+  }
+  & .file {
+    display: flex;
+    align-items: center;
     & span {
       margin-right: 5px;
       font-size: 14px;
-        line-height: 16px;
-        color: $text;
+      line-height: 16px;
+      color: $text;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      @include bp(xs) {
+        font-size: 11px;
+        line-height: 13px;
+        max-width: 80px;
+        margin-right: 4px;
+      }
     }
     & i {
       cursor: pointer;
+      position: relative;
+      top: -7px;
+      @include bp(xs) {
+        top: -6px;
+      }
       &:hover {
         & svg path {
           fill: $black;
+        }
+      }
+      svg{
+        @include bp(xs) {
+          width: 10px;
+          height: 10px;
         }
       }
     }
@@ -448,9 +528,6 @@
       line-height: 16px;
       letter-spacing: 0.2em;
       color: rgba(102, 102, 102, 0.64);
-        @media (max-width: 991px) {
-          text-align: center;
-          }
       & br {
         @media (max-width: 767px) {
          display: none;
@@ -490,7 +567,7 @@
   width: 100%;
   min-height: 300px;
   padding: 30px;
-
+  padding-top: 20px;
   }
 }
 
@@ -501,6 +578,11 @@
   width: 60px;
   height: 44px;
   margin-bottom: 9px;
+  @media (max-width: 574px) {
+    margin-bottom: 10px;
+    width: 76px;
+      height: 61px;
+  }
       & img {
         width: 100%;
         height: 100%;
@@ -515,6 +597,11 @@
     font-size: 14px;
     line-height: 16px;
     color: #333333;
+    @media (max-width: 574px) {
+      font-size: 22px;
+        line-height: 16px;
+      margin-bottom: 50px;
+    }
 }
 
 .admin-confirm__item-text {
@@ -532,9 +619,9 @@
   }
 
   @media (max-width: 574px) {
-    margin-top: auto;
-    font-size: 22px;
-      line-height: 28px;
+    margin-bottom: 35px;
+  font-size: 18px;
+    line-height: 20px;
   }
 
   & svg {
@@ -566,8 +653,12 @@ width: auto;
   right: 0;
   z-index: -1;
  @media (max-width: 574px) {
-width: calc(100% - 70px);
+  bottom: -40px;
+    width: calc(100% - 34px);
   height: auto;
+ }
+ @media (max-width: 500px) {
+    bottom: 0;
  }
 @media (max-width: 441px) {
   width: calc(100% - 30px);

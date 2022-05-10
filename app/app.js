@@ -3,11 +3,16 @@
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
+
     require('./assets/templates/layouts/index.html');
     require('./assets/templates/layouts/admin-step1.html');
     require('./assets/templates/layouts/admin-step1__logged-in.html');
     require('./assets/templates/layouts/admin-step2__logged-in.html');
     require('./assets/templates/layouts/admin-step4.html');
+    require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
+    require('./assets/templates/layouts/profile-settings.html');
+    require('./assets/templates/layouts/admin-step3.html');
+
 }
 
 // Depends
@@ -98,20 +103,39 @@ $(function () {
         e.stopPropagation();
     });
 
-    // edit form
+    // upload & multiupload
 
-    $('.edit-form').on('click', function () {
-        $(this).closest('form').addClass('edit').find('.input.first').focus();
+    $(document).delegate('#upload-file', 'change', function () {
+        var file = $('#upload-file')[0].files;
+        for (var i = 0; i < file.length; i++) {
+            $('#upload-preview').html('<div class="file"><span>' + file[i].name + '</span>\n' +
+                '                  <i class="delete-file">\n' +
+                '                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '                      <path d="M5.99945 7.19342C4.57713 8.6194 3.21463 9.98556 1.85091 11.3529C1.7215 11.4824 1.59819 11.6191 1.46023 11.7387C1.06711 12.0794 0.582422 12.0842 0.252786 11.7571C-0.0780719 11.4299 -0.0915015 10.9317 0.261332 10.552C0.68986 10.0906 1.14769 9.65593 1.59331 9.20908C2.64204 8.16035 3.692 7.11162 4.78956 6.01527C4.6223 5.83824 4.47824 5.67953 4.32807 5.52814C3.03516 4.23279 1.73981 2.93866 0.446905 1.64209C-0.0622005 1.13176 -0.133011 0.648296 0.234473 0.261278C0.617828 -0.144053 1.12327 -0.0769047 1.65924 0.456619C2.95581 1.74953 4.24872 3.04488 5.54285 4.33901C5.68447 4.48063 5.83341 4.61615 6.0141 4.78951C7.35707 3.4441 8.67806 2.12189 9.99782 0.798464C10.1553 0.63975 10.3091 0.477373 10.474 0.324764C10.9135 -0.0842299 11.4226 -0.106206 11.7693 0.26372C12.099 0.615333 12.0782 1.10735 11.679 1.5139C10.7242 2.48572 9.75975 3.44899 8.79038 4.40738C8.27028 4.92014 7.73188 5.4146 7.10313 6.01039C7.69647 6.56467 8.22511 7.03592 8.72933 7.53282C9.70115 8.48877 10.662 9.45448 11.6204 10.4239C12.0819 10.8902 12.1209 11.3969 11.7461 11.7619C11.3738 12.1245 10.8781 12.0757 10.408 11.6069C8.95275 10.1565 7.50601 8.7012 5.99945 7.19342Z"\n' +
+                '                          fill="#FE9192" />\n' +
+                '                    </svg>\n' +
+                '                  </i>\n' +
+                '                </div>');
+        }
     });
 
-    $('.save-form').on('click', function () {
-        $(this).closest('form').removeClass('edit');
+    $(document).delegate('#upload-files', 'change', function () {
+        var files = $('#upload-files')[0].files;
+        for (var i = 0; i < files.length; i++) {
+            $('#upload-prev').append('<div class="file"><span>' + files[i].name + '</span>\n' +
+                '                  <i class="delete-file">\n' +
+                '                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '                      <path d="M5.99945 7.19342C4.57713 8.6194 3.21463 9.98556 1.85091 11.3529C1.7215 11.4824 1.59819 11.6191 1.46023 11.7387C1.06711 12.0794 0.582422 12.0842 0.252786 11.7571C-0.0780719 11.4299 -0.0915015 10.9317 0.261332 10.552C0.68986 10.0906 1.14769 9.65593 1.59331 9.20908C2.64204 8.16035 3.692 7.11162 4.78956 6.01527C4.6223 5.83824 4.47824 5.67953 4.32807 5.52814C3.03516 4.23279 1.73981 2.93866 0.446905 1.64209C-0.0622005 1.13176 -0.133011 0.648296 0.234473 0.261278C0.617828 -0.144053 1.12327 -0.0769047 1.65924 0.456619C2.95581 1.74953 4.24872 3.04488 5.54285 4.33901C5.68447 4.48063 5.83341 4.61615 6.0141 4.78951C7.35707 3.4441 8.67806 2.12189 9.99782 0.798464C10.1553 0.63975 10.3091 0.477373 10.474 0.324764C10.9135 -0.0842299 11.4226 -0.106206 11.7693 0.26372C12.099 0.615333 12.0782 1.10735 11.679 1.5139C10.7242 2.48572 9.75975 3.44899 8.79038 4.40738C8.27028 4.92014 7.73188 5.4146 7.10313 6.01039C7.69647 6.56467 8.22511 7.03592 8.72933 7.53282C9.70115 8.48877 10.662 9.45448 11.6204 10.4239C12.0819 10.8902 12.1209 11.3969 11.7461 11.7619C11.3738 12.1245 10.8781 12.0757 10.408 11.6069C8.95275 10.1565 7.50601 8.7012 5.99945 7.19342Z"\n' +
+                '                          fill="#FE9192" />\n' +
+                '                    </svg>\n' +
+                '                  </i>\n' +
+                '                </div>');
+        }
     });
 
-    // order details
-
-    $('.profile-order__head .order-info').on('click', function () {
-        $(this).toggleClass('active').closest('.profile-order').find('.profile-order__body').slideToggle();
+    $(document).delegate('.delete-file', 'click', function () {
+        $(this).closest('.file').remove();
+        $(this).remove();
     });
 
     // card masks
@@ -119,67 +143,6 @@ $(function () {
     $('#credit_card').mask('9999 9999 9999 9999', { autoclear: false });
     $('#expiration_date').mask('99/99');
     $('#cvv').mask('999');
-
-    $('#credit_card').on('keyup', function () {
-        var result = $(this).val();
-        $(this).on('blur focusout', function () {
-            var card_num = $(this).val();
-            $(this).data('value', card_num);
-            if (card_num.length) {
-                $(this).val($(this).data('value').slice(0, 15).replace(/\d/g, '•') + $(this).data('value').slice(15, 19)).unmask();
-            }
-        }).focus(function () {
-            $(this).val(result).mask('9999 9999 9999 9999', { autoclear: false });
-        });
-    });
-
-    // remove from cart
-
-    $('.cart-item__del').on('click', function () {
-        $(this).closest('.cart-item').remove();
-        if ($('.cart-item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items').css('min-height', 392);
-        }
-        else if ($('.cart-item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items').css('min-height', 256);
-        }
-        else if ($('.cart-item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items').css('min-height', 136);
-        }
-        if ($('.cart-item').length < 1) {
-            $('.cart-items').removeAttr('style');
-            $('.cart-main__total, .cart-buttons').hide();
-            $('.page-subtitle').html('Your cart is empty');
-        }
-    });
-
-    if ($('.cart-item, .cart-review__item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-        $('.cart-items, .cart-review__items').css('min-height', 392);
-    }
-    else if ($('.cart-item, .cart-review__item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-        $('.cart-items, .cart-review__items').css('min-height', 256);
-    }
-    else if ($('.cart-item, .cart-review__item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-        $('.cart-items, .cart-review__items').css('min-height', 136);
-    }
-    else {
-        $('.cart-items, .cart-review__items').removeAttr('style');
-    }
-
-    $(window).on('resize', function () {
-        if ($('.cart-item, .cart-review__item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items, .cart-review__items').css('min-height', 392);
-        }
-        else if ($('.cart-item, .cart-review__item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items, .cart-review__items').css('min-height', 256);
-        }
-        else if ($('.cart-item, .cart-review__item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-            $('.cart-items, .cart-review__items').css('min-height', 136);
-        }
-        else {
-            $('.cart-items, .cart-review__items').removeAttr('style');
-        }
-    });
 
     // input value
 
@@ -229,17 +192,17 @@ $(function () {
             },
             messages: {
                 email: {
-                    required: 'Povinné pole',
+                    required: 'Required',
                 },
                 password: {
-                    required: 'Povinné pole',
+                    required: 'Required',
                 },
                 new_password: {
-                    required: 'Zadejte nové heslo',
+                    required: 'Enter a new password',
                 },
                 re_password: {
-                    required: 'Odeslat heslo',
-                    equalTo: 'Hesla se neshodují'
+                    required: 'Submit password',
+                    equalTo: 'Passwords do not match'
                 }
             }
         });
