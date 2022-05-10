@@ -24,6 +24,9 @@
 
 .admin-content__main{
   padding: 50px 85px;
+  @media only screen and (max-width: 1359px){
+    padding: 50px 60px;
+  }
   @include bp(md) {
     padding: 20px 60px 80px;
   }
