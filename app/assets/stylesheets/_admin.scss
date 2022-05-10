@@ -38,6 +38,16 @@
       padding-bottom: 120px;
     }
   }
+  &.admin-upload {
+     @include bp(xs) {
+              padding: 0 20px;
+            }
+    & .admin-title {
+        @include bp(md) {
+        display: none;
+      }  
+    }
+  }
 }
 
 .admin-bg{
@@ -298,3 +308,115 @@
 }
 
 /*  step 2  */
+
+.admin-upload {
+  & .admin-step__buttons {
+
+  @media (max-width: 991px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+}
+
+.admin-upload__wrapper {
+  &>p {
+    margin: 0;
+    margin-left: 16px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.2em;
+    color: rgba($text, 0.64);
+
+    & span {
+      @media (max-width: 991px) {
+        display: block;
+      }
+    }
+    & span+span {
+      color: $grey;
+    }
+  }
+}
+
+.admin-upload__text {
+  max-width: 707px;
+  min-height: 149px;
+  margin-bottom: 40px;
+  padding: 30px 33px 27px 23px;
+  background: #FFFFFF;
+    border: 1px solid #F3F2F2;
+    box-shadow: 0px 20px 13px rgba(0, 0, 0, 0.015), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0117778), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00722222);
+    border-radius: 10px;
+    box-sizing: border-box;
+  & p {
+    margin: 0;
+      font-size: 16px;
+      line-height: 26px;
+      color: $black;
+  }
+}
+
+.admin-upload__files-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .input-file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 139px;
+    height: 50px;
+    margin-right: 34px;
+    background: #F7F8FC;
+    border: 1px solid #F3F2F2;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.03), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: linear 0.2s;
+    &:hover {
+          border-color: rgba(#8624E1, 0.2);
+      }
+    >label {
+      font-weight: 400;
+      margin-bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        padding-left: 12px;
+      font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: $black;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+  & .file {
+    & + .file {
+      margin-left: 27px;
+    }
+    & span {
+      margin-right: 5px;
+      font-size: 14px;
+        line-height: 16px;
+        color: $text;
+    }
+    & i {
+      cursor: pointer;
+      &:hover {
+        & svg path {
+          fill: $black;
+        }
+      }
+    }
+  }
+}
