@@ -3,16 +3,17 @@
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
-  require('./assets/templates/layouts/index.html');
-  require('./assets/templates/layouts/admin-step1.html');
-  require('./assets/templates/layouts/admin-step1__logged-in.html');
-  require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
-  require('./assets/templates/layouts/profile-settings.html');
+	require('./assets/templates/layouts/index.html');
+	require('./assets/templates/layouts/admin-step1.html');
+	require('./assets/templates/layouts/admin-step1__logged-in.html');
+	require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
+	require('./assets/templates/layouts/admin-step2__logged-in.html');
+	require('./assets/templates/layouts/admin-step3.html');
+	require('./assets/templates/layouts/admin-step4.html');
+	require('./assets/templates/layouts/admin-step5.html');
+	require('./assets/templates/layouts/admin-step6.html');
+	require('./assets/templates/layouts/profile-settings.html');
   require('./assets/templates/layouts/my-files.html');
-  require('./assets/templates/layouts/admin-step2__logged-in.html');
-  require('./assets/templates/layouts/admin-step3.html');
-  require('./assets/templates/layouts/admin-step5.html');
-  require('./assets/templates/layouts/admin-step6.html');
 }
 
 // Depends
