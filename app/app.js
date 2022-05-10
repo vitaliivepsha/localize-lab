@@ -99,88 +99,11 @@ $(function() {
     e.stopPropagation();
   });
 
-    // edit form
-
-  $('.edit-form').on('click', function() {
-    $(this).closest('form').addClass('edit').find('.input.first').focus();
-  });
-
-  $('.save-form').on('click', function() {
-    $(this).closest('form').removeClass('edit');
-  });
-
-    // order details
-
-  $('.profile-order__head .order-info').on('click', function() {
-    $(this).toggleClass('active').closest('.profile-order').find('.profile-order__body').slideToggle();
-  });
-
     // card masks
 
   $('#credit_card').mask('9999 9999 9999 9999', {autoclear: false});
   $('#expiration_date').mask('99/99');
   $('#cvv').mask('999');
-
-  $('#credit_card').on('keyup', function() {
-    var result = $(this).val();
-    $(this).on('blur focusout', function() {
-      var card_num = $(this).val();
-      $(this).data('value', card_num);
-      if (card_num.length) {
-        $(this).val($(this).data('value').slice(0, 15).replace(/\d/g, '•') + $(this).data('value').slice(15, 19)).unmask();
-      }
-    }).focus(function() {
-      $(this).val(result).mask('9999 9999 9999 9999', {autoclear: false});
-    });
-  });
-
-    // remove from cart
-
-  $('.cart-item__del').on('click', function() {
-    $(this).closest('.cart-item').remove();
-    if ($('.cart-item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-      $('.cart-items').css('min-height', 392);
-    }
-    else if ($('.cart-item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-      $('.cart-items').css('min-height', 256);
-    }
-      else if ($('.cart-item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-        $('.cart-items').css('min-height', 136);
-      }
-    if ($('.cart-item').length < 1) {
-      $('.cart-items').removeAttr('style');
-      $('.cart-main__total, .cart-buttons').hide();
-      $('.page-subtitle').html('Your cart is empty');
-    }
-  });
-
-  if ($('.cart-item, .cart-review__item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-    $('.cart-items, .cart-review__items').css('min-height', 392);
-  }
-  else if ($('.cart-item, .cart-review__item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-    $('.cart-items, .cart-review__items').css('min-height', 256);
-  }
-    else if ($('.cart-item, .cart-review__item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-      $('.cart-items, .cart-review__items').css('min-height', 136);
-    }
-    else {
-      $('.cart-items, .cart-review__items').removeAttr('style');
-    }
-
-  $(window).on('resize', function() {
-    if ($('.cart-item, .cart-review__item').length >= 3 && $(window).height() < 900 && $(window).width() > 575) {
-      $('.cart-items, .cart-review__items').css('min-height', 392);
-    }
-    else if ($('.cart-item, .cart-review__item').length >= 2 && $(window).height() < 900 && $(window).width() > 575) {
-      $('.cart-items, .cart-review__items').css('min-height', 256);
-    }
-        else if ($('.cart-item, .cart-review__item').length >= 1 && $(window).height() < 900 && $(window).width() > 575) {
-          $('.cart-items, .cart-review__items').css('min-height', 136);
-        }
-        else {
-          $('.cart-items, .cart-review__items').removeAttr('style');
-        }
-  });
 
     // input value
 
