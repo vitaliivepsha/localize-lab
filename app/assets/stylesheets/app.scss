@@ -230,6 +230,58 @@ textarea:-webkit-autofill:hover {
   z-index: 2;
 }
 
+.signup-popup {
+  & .input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    & i {
+      position: absolute;
+      left: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 12px;
+      height: 100%;
+      pointer-events: none;
+    }
+    & span {
+      position: absolute;
+      top: 0;
+      right: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      &.active{
+        transform: rotate(180deg);
+        & svg path{
+          fill: $text;
+        }
+      }
+    }
+
+    & .input {
+      box-sizing: border-box;
+      padding-left: 37px;
+      padding-right: 40px;
+      &::placeholder {
+        color: #333333;
+      }
+      &:focus {
+        border-color: #d0d0d0;
+        box-shadow: 0 100px 40px rgba(0, 0, 0, 0.015), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0227778), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0182222);
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+
+  }
+}
+
 .overlay {
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(3px);
