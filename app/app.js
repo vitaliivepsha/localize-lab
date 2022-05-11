@@ -206,7 +206,22 @@ $(function() {
           required: 'Submit password',
           equalTo: 'Passwords do not match'
         }
-      }
+      },
+        submitHandler: function() {
+            if ($('#payment-form').length) {
+                $.ajax({
+                    data: $('#payment-form').serialize(),
+                    success: function(data)
+                    {
+                        $.magnificPopup.open({
+                            items: {
+                                src: '#thank-you'
+                            }
+                        });
+                    }
+                });
+            }
+        }
     });
   });
 

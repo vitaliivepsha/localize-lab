@@ -163,7 +163,7 @@
             <img src="../../images/admin-bg.png" alt="" class="admin-bg">
             <div class="admin-content__main admin-upload has-menu">
                 <span class="admin-title">Payment</span>
-                <form>
+                <form class="validate-form" id="payment-form">
                     <div class="admin-payment__wrapper">
                         <div class="admin-payment__left">
                             <div class="admin-payment__left-inner">
@@ -238,11 +238,48 @@
                     </div>
                 </form>
             </div>
-
-
         </div>
     </div>
     <div class="overlay"></div>
+    <div class="mfp-hide">
+        <div class="popup mfp-hide thx-popup" id="thank-you">
+            <div class="popup-bg">
+                <svg width="277" height="186" viewBox="0 0 277 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M-41.3754 -76.1277L209.683 -169.075C221.773 -158.105 233.297 -146.6 243.365 -133.995C261.194 -111.656 274.591 -84.9836 276.414 -56.4827C278.235 -27.989 267.269 2.59516 243.811 21.1703C215.496 43.5856 174.955 45.5481 145.187 66.1262C124.182 80.6458 110.714 102.957 98.5832 124.814C86.5117 146.567 74.6454 169.204 55.6479 185.917L-41.3682 -76.1303L-41.3754 -76.1277Z"
+                        fill="url(#paint0_linear_61_3322)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_61_3322" x1="-2.23071" y1="208.176" x2="182.234" y2="-193.227"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop offset="0.1714" stop-color="#FFC366" />
+                            <stop offset="0.5392" stop-color="#FF6096" />
+                            <stop offset="0.6422" stop-color="#ED4DAC" />
+                            <stop offset="0.856" stop-color="#BF1BE5" />
+                            <stop offset="0.9467" stop-color="#AA04FF" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="popup__content">
+                <span class="popup-title">Thank you!</span>
+                <div class="thx-success">
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.49717 7.07322C5.67242 5.84665 6.76546 4.70254 7.86099 3.56165C8.88427 2.49614 9.90818 1.43062 10.9383 0.372192C11.4216 -0.12449 12.1771 -0.120625 12.6461 0.363173C13.1076 0.839241 13.1256 1.60391 12.6523 2.10446C11.7094 3.10169 10.7496 4.08153 9.79607 5.06845C8.43958 6.47217 7.08185 7.8759 5.72536 9.27962C5.71041 9.29508 5.69671 9.31054 5.68301 9.32665C4.8447 10.3252 4.06307 10.1119 3.36676 9.34211C2.42445 8.29978 1.42047 7.31737 0.447634 6.30404C-0.00826569 5.82926 -0.109784 5.34675 0.115052 4.81399C0.44452 4.03257 1.45659 3.83351 2.04079 4.43648C2.76762 5.1857 3.49506 5.93491 4.21815 6.68863C4.3122 6.78655 4.3807 6.91088 4.49717 7.07322Z" fill="#26D68D"/>
+                    </svg>
+                </div>
+                <div class="thx-order">
+                    <span>Your order ID:</span> 01234
+                </div>
+                <div class="thx-descr">
+                    Your order has been accepted. We will contact you shortly
+                </div>
+                <div class="thx-buttons">
+                    <a href="" class="btn btn-tr">My orders</a>
+                    <button title="Close (Esc)" type="button" class="btn mfp-close">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 </body>
