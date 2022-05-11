@@ -3,16 +3,16 @@
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
-	require('./assets/templates/layouts/index.html');
-	require('./assets/templates/layouts/admin-step1.html');
-	require('./assets/templates/layouts/admin-step1__logged-in.html');
-	require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
-	require('./assets/templates/layouts/admin-step2__logged-in.html');
-	require('./assets/templates/layouts/admin-step3.html');
-	require('./assets/templates/layouts/admin-step4.html');
-	require('./assets/templates/layouts/admin-step5.html');
-	require('./assets/templates/layouts/admin-step6.html');
-	require('./assets/templates/layouts/profile-settings.html');
+  require('./assets/templates/layouts/index.html');
+  require('./assets/templates/layouts/admin-step1.html');
+  require('./assets/templates/layouts/admin-step1__logged-in.html');
+  require('./assets/templates/layouts/admin-step1__sidebar-sm.html');
+  require('./assets/templates/layouts/admin-step2__logged-in.html');
+  require('./assets/templates/layouts/admin-step3.html');
+  require('./assets/templates/layouts/admin-step4.html');
+  require('./assets/templates/layouts/admin-step5.html');
+  require('./assets/templates/layouts/admin-step6.html');
+  require('./assets/templates/layouts/profile-settings.html');
   require('./assets/templates/layouts/my-files.html');
   require('./assets/templates/layouts/orders-history.html');
 }
@@ -107,7 +107,7 @@ $(function() {
 
   // upload & multiupload
 
-  $(document).delegate('#upload-file', 'change', function(){
+  $(document).delegate('#upload-file', 'change', function() {
     var file = $('#upload-file')[0].files;
     for (var i = 0; i < file.length; i++) {
       $('#upload-preview').html('<div class="file"><span>' + file[i].name + '</span>\n' +
@@ -121,7 +121,7 @@ $(function() {
     }
   });
 
-  $(document).delegate('#upload-files', 'change', function(){
+  $(document).delegate('#upload-files', 'change', function() {
     var files = $('#upload-files')[0].files;
     for (var i = 0; i < files.length; i++) {
       $('#upload-prev').append('<div class="file"><span>' + files[i].name + '</span>\n' +
