@@ -251,9 +251,11 @@
     line-height: 16px;
     text-decoration-line: underline;
     color: #B3B3B3;
+    cursor: pointer;
     &:hover {
       color: $text;
       text-decoration-line: none;
+      cursor: pointer;
     }
 }
 
