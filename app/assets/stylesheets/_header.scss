@@ -148,6 +148,7 @@
   width: 36px;
   height: 36px;
   margin-right: -4px;
+  cursor: pointer;
   @include bp(md) {
     display: flex;
   }
@@ -192,7 +193,8 @@
   width: 255px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 20px 0 50px rgba(206, 211, 222, 0.2);
-  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
